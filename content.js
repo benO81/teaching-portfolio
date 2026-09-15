@@ -340,8 +340,66 @@ window.PORTFOLIO = {
     CLASSROOM EVIDENCE
     category: pick one of the categories below, or make your own
     unit: optional — the slug of a related unit, to link to it
+    book: optional — a folder of page images named p01.jpg, p02.jpg … plus a
+          small cover-sm.jpg, and how many pages there are. The card shows the
+          cover and the pop-up shows every page.
   */
   evidence: [
+    {
+      title: "The Fire Disaster",
+      category: "Student work",
+      date: "September 2026",
+      unit: "",
+      image: "",
+      alt: "Cover of the student picture book The Fire Disaster, with the author's name blurred",
+      book: { folder: "images/books/the-fire-disaster", pages: 12 },
+      description: "A student's illustrated story continuing The Wild Robot. Roz survives a shipwreck, raises the gosling Brightbill, and returns to save the island from fire-breathing dragons.",
+      demonstrates: "A clear narrative structure with a complication and resolution, using onomatopoeia and dialogue to build tension."
+    },
+    {
+      title: "The Cyborg Factory",
+      category: "Student work",
+      date: "September 2026",
+      unit: "",
+      image: "",
+      alt: "Cover of the student picture book The Cyborg Factory, with the author's name blurred",
+      book: { folder: "images/books/the-cyborg-factory", pages: 10 },
+      description: "A student's illustrated story continuing The Wild Robot. Roz is captured and taken to a robot factory, escapes a giant cyborg, and is rescued by a flock of geese.",
+      demonstrates: "Ambitious vocabulary, similes and direct address to the reader to draw the audience in."
+    },
+    {
+      title: "The Last Alien",
+      category: "Student work",
+      date: "September 2026",
+      unit: "",
+      image: "",
+      alt: "Cover of the student picture book The Last Alien, with the author's name blurred",
+      book: { folder: "images/books/the-last-alien", pages: 14 },
+      description: "A student's illustrated story continuing The Wild Robot. Roz meets Kat, an alien seeking revenge, and has to find a way to make peace before she can reunite with Brightbill.",
+      demonstrates: "A developed antagonist with a clear motive, extended dialogue, and a resolution built on an apology rather than a fight."
+    },
+    {
+      title: "The Lost Sewer",
+      category: "Student work",
+      date: "September 2026",
+      unit: "",
+      image: "",
+      alt: "Cover of the student picture book The Lost Sewer, with the author's name blurred",
+      book: { folder: "images/books/the-lost-sewer", pages: 10 },
+      description: "A student's illustrated story continuing The Wild Robot. After a plane crash in the jungle, Roz defeats a sewer monster and finds a glowing portal that takes her home.",
+      demonstrates: "A well-sequenced story that uses time connectives and sound words to move the plot along."
+    },
+    {
+      title: "The Great Molten Escape",
+      category: "Student work",
+      date: "September 2026",
+      unit: "",
+      image: "",
+      alt: "Cover of the student picture book The Great Molten Escape, with the author's name blurred",
+      book: { folder: "images/books/the-great-molten-escape", pages: 17 },
+      description: "A student's illustrated story continuing The Wild Robot. Roz escapes a robot foundry, flies home, and faces a magma monster to save Brightbill.",
+      demonstrates: "Suspense sustained across a long plot, using the character's inner thoughts, onomatopoeia and direct address to the reader."
+    },
     {
       title: "Fraction walls and number talks",
       category: "Lesson in action",

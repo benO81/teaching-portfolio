@@ -438,7 +438,7 @@ a:hover { color: var(--accent-hover); }
 }
 .evidence-card:hover { border-color: var(--border-strong); transform: translateY(-2px); }
 .evidence-media {
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   width: 100%;
   max-width: 100%;
   object-fit: cover;
@@ -470,6 +470,20 @@ a:hover { color: var(--accent-hover); }
   color: var(--text);
 }
 .evidence-dialog::backdrop { background: rgb(10 12 11 / 0.55); }
+.evidence-dialog.is-wide { width: min(1100px, calc(100vw - 32px)); }
+.evidence-dialog.is-wide .dialog-head {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin: -24px -24px 0;
+  padding: 16px 24px;
+  background: var(--surface-raised);
+  border-bottom: 1px solid var(--border);
+}
+.book-pages { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 24px; }
+.book-pages li { display: grid; gap: 8px; }
+.book-pages img { width: 100%; height: auto; background: var(--surface-sunken); }
+.page-label { font-size: 13px; color: var(--text-subtle); }
 .evidence-dialog[open] { animation: dialog-in 260ms ease-out; }
 @keyframes dialog-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 .dialog-body { padding: 24px; display: grid; gap: 16px; }

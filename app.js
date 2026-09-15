@@ -187,9 +187,16 @@
   const dialog = $(".evidence-dialog");
   let lastTrigger = null;
 
+  // A book is a folder of page images (p01.jpg, p02.jpg …) plus a small cover-sm.jpg for its card.
+  const bookPages = (e) =>
+    e.book && has(e.book.folder) && e.book.pages > 0
+      ? Array.from({ length: e.book.pages }, (_, i) => `${e.book.folder}/p${String(i + 1).padStart(2, "0")}.jpg`)
+      : [];
+  const cardImage = (e) => (has(e.image) ? e.image : bookPages(e).length ? `${e.book.folder}/cover-sm.jpg` : "");
+
   const evidenceMedia = (e) =>
-    has(e.image)
-      ? `<img class="evidence-media" src="${esc(e.image)}" alt="${esc(e.alt)}" loading="lazy">`
+    cardImage(e)
+      ? `<img class="evidence-media" src="${esc(cardImage(e))}" alt="${esc(e.alt)}" loading="lazy">`
       : `<div class="evidence-media evidence-tile" aria-hidden="true">${esc(e.category || "Evidence")}</div>`;
 
   function renderEvidence() {
@@ -207,7 +214,7 @@
         <button type="button" class="evidence-card" data-evidence="${i}" aria-haspopup="dialog">
           ${evidenceMedia(e)}
           <span class="evidence-text">
-            <span class="evidence-cat">${[has(e.image) ? esc(e.category) : "", esc(e.date)].filter(Boolean).join(" · ")}</span>
+            <span class="evidence-cat">${[cardImage(e) ? esc(e.category) : "", esc(e.date)].filter(Boolean).join(" · ")}</span>
             <span class="evidence-title">${esc(e.title)}</span>
             ${has(e.description) ? `<span class="evidence-desc">${esc(e.description)}</span>` : ""}
           </span>
@@ -219,6 +226,7 @@
     const e = evidence[index];
     if (!e) return;
     const unit = units.find((u) => u.slug === e.unit);
+    const pages = bookPages(e);
     lastTrigger = trigger;
     $("[data-dialog-body]").innerHTML = `
       <div class="dialog-head">
@@ -228,11 +236,16 @@
         </div>
         <button type="button" class="close-btn" data-close aria-label="Close">${closeIcon}</button>
       </div>
-      ${has(e.image) ? `<img src="${esc(e.image)}" alt="${esc(e.alt)}">` : ""}
+      ${has(e.image) && !pages.length ? `<img src="${esc(e.image)}" alt="${esc(e.alt)}">` : ""}
       ${has(e.description) ? `<p class="muted">${esc(e.description)}</p>` : ""}
       ${has(e.demonstrates) ? `<div class="callout"><p class="callout-label">What this demonstrates</p><p>${esc(e.demonstrates)}</p></div>` : ""}
-      ${unit ? `<a class="text-link" href="#/unit/${encodeURIComponent(unit.slug)}" data-close>From the unit: ${esc(unit.title)}</a>` : ""}`;
+      ${unit ? `<a class="text-link" href="#/unit/${encodeURIComponent(unit.slug)}" data-close>From the unit: ${esc(unit.title)}</a>` : ""}
+      ${pages.length ? `<ol class="book-pages" aria-label="${esc(e.title)}, ${pages.length} pages">${pages
+        .map((src, i) => `<li><img src="${esc(src)}" alt="${i === 0 ? esc(e.alt) : `Page ${i + 1} of ${esc(e.title)}`}" loading="lazy" width="1280" height="720"><span class="page-label">Page ${i + 1} of ${pages.length}</span></li>`)
+        .join("")}</ol>` : ""}`;
+    dialog.classList.toggle("is-wide", pages.length > 0);
     dialog.showModal();
+    dialog.scrollTop = 0;
     $("[data-close]", dialog).focus();
   }
 
