@@ -1,2 +1,5 @@
 .claude/
 profile.png
+
+.vercel
+.env*
