@@ -194,9 +194,10 @@
       : [];
   const cardImage = (e) => (has(e.image) ? e.image : bookPages(e).length ? `${e.book.folder}/cover-sm.jpg` : "");
 
+  // The card's image is decorative: the button is named by its title, and the pop-up carries the full description.
   const evidenceMedia = (e) =>
     cardImage(e)
-      ? `<img class="evidence-media" src="${esc(cardImage(e))}" alt="${esc(e.alt)}" loading="lazy">`
+      ? `<img class="evidence-media" src="${esc(cardImage(e))}" alt="" loading="lazy">`
       : `<div class="evidence-media evidence-tile" aria-hidden="true">${esc(e.category || "Evidence")}</div>`;
 
   function renderEvidence() {
@@ -211,11 +212,11 @@
 
     listEl.innerHTML = items
       .map(({ e, i }) => `
-        <button type="button" class="evidence-card" data-evidence="${i}" aria-haspopup="dialog">
+        <button type="button" class="evidence-card" data-evidence="${i}" aria-haspopup="dialog" aria-labelledby="evidence-title-${i}">
           ${evidenceMedia(e)}
           <span class="evidence-text">
             <span class="evidence-cat">${[cardImage(e) ? esc(e.category) : "", esc(e.date)].filter(Boolean).join(" · ")}</span>
-            <span class="evidence-title">${esc(e.title)}</span>
+            <span class="evidence-title" id="evidence-title-${i}">${esc(e.title)}</span>
             ${has(e.description) ? `<span class="evidence-desc">${esc(e.description)}</span>` : ""}
           </span>
         </button>`)
@@ -227,6 +228,8 @@
     if (!e) return;
     const unit = units.find((u) => u.slug === e.unit);
     const pages = bookPages(e);
+    // Transcripts live in book-text.js, keyed by the book's folder name, one entry per page.
+    const pageText = (pages.length && window.BOOK_TEXT && window.BOOK_TEXT[e.book.folder.split("/").pop()]) || [];
     lastTrigger = trigger;
     $("[data-dialog-body]").innerHTML = `
       <div class="dialog-head">
@@ -241,7 +244,14 @@
       ${has(e.demonstrates) ? `<div class="callout"><p class="callout-label">What this demonstrates</p><p>${esc(e.demonstrates)}</p></div>` : ""}
       ${unit ? `<a class="text-link" href="#/unit/${encodeURIComponent(unit.slug)}" data-close>From the unit: ${esc(unit.title)}</a>` : ""}
       ${pages.length ? `<ol class="book-pages" aria-label="${esc(e.title)}, ${pages.length} pages">${pages
-        .map((src, i) => `<li><img src="${esc(src)}" alt="${i === 0 ? esc(e.alt) : `Page ${i + 1} of ${esc(e.title)}`}" loading="lazy" width="1280" height="720"><span class="page-label">Page ${i + 1} of ${pages.length}</span></li>`)
+        .map((src, i) => {
+          const text = has(pageText[i]) ? pageText[i] : "";
+          const alt = i === 0 ? e.alt : `Page ${i + 1} of ${e.title}${text ? " (text below)" : ""}`;
+          const transcript = text
+            ? `<details class="page-text"><summary>Text on this page</summary>${text.split(/\n{2,}/).map((para) => `<p>${esc(para)}</p>`).join("")}</details>`
+            : "";
+          return `<li><img src="${esc(src)}" alt="${esc(alt)}" loading="lazy" width="1280" height="720"><span class="page-label">Page ${i + 1} of ${pages.length}</span>${transcript}</li>`;
+        })
         .join("")}</ol>` : ""}`;
     dialog.classList.toggle("is-wide", pages.length > 0);
     dialog.showModal();

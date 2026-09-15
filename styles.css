@@ -484,6 +484,18 @@ a:hover { color: var(--accent-hover); }
 .book-pages li { display: grid; gap: 8px; }
 .book-pages img { width: 100%; height: auto; background: var(--surface-sunken); }
 .page-label { font-size: 13px; color: var(--text-subtle); }
+.page-text summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  cursor: pointer;
+  color: var(--accent);
+  font-weight: 500;
+  font-size: 15px;
+}
+.page-text summary:hover { text-decoration: underline; }
+.page-text p { max-width: 70ch; color: var(--text); }
+.page-text p + p { margin-top: 12px; }
 .evidence-dialog[open] { animation: dialog-in 260ms ease-out; }
 @keyframes dialog-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 .dialog-body { padding: 24px; display: grid; gap: 16px; }
