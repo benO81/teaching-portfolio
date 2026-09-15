@@ -26,7 +26,7 @@ window.PORTFOLIO = {
     yearsTeaching: "6",
     subjects: ["All learning areas (generalist)"],
     yearLevels: "Year 5",
-    email: "you@school.org",
+    email: "bjdri0@eq.edu.au",
     resume: "",           // e.g. "files/resume.pdf" — leave "" to hide the button
     photo: "",            // e.g. "images/headshot.jpg" — leave "" to show initials
     intro:
