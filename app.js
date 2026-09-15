@@ -62,7 +62,7 @@
       ["Currently teaching", [t.school, t.location].filter(has).join(", ")],
       ["Subjects", (t.subjects || []).join(", ")],
       ["Year level", t.yearLevels],
-      ["Experience", has(t.yearsTeaching) ? `${t.yearsTeaching} years in the classroom` : ""]
+      ["Experience", t.experience]
     ].filter(([, v]) => has(v));
 
     const media = has(t.photo)

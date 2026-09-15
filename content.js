@@ -21,9 +21,9 @@ window.PORTFOLIO = {
   teacher: {
     name: "Benjamin Driscoll",
     role: "Year 5 Classroom Teacher",
-    school: "Your School Name",
-    location: "City, Region",
-    yearsTeaching: "6",
+    school: "Musgrave Hill State School",
+    location: "Southport, Queensland",
+    experience: "Teaching at Musgrave Hill State School since 2017",
     subjects: ["All learning areas (generalist)"],
     yearLevels: "Year 5",
     email: "bjdri0@eq.edu.au",
@@ -406,9 +406,10 @@ window.PORTFOLIO = {
     type: e.g. "Qualification", "Professional learning", "Leadership", "Award"
   */
   growth: [
-    { year: "2026", title: "Numeracy Team Member", org: "Your School Name", type: "Leadership", note: "Help lead whole-school use of concrete materials in Years 3–6." },
+    { year: "2026", title: "Numeracy Team Member", org: "Musgrave Hill State School", type: "Leadership", note: "Help lead whole-school use of concrete materials in Years 3–6." },
     { year: "2025", title: "Structured Literacy Professional Learning", org: "Your Professional Learning Provider", type: "Professional learning", note: "Applied explicit phonics and spelling routines in daily literacy blocks." },
-    { year: "2024", title: "Mentor Teacher", org: "Your School Name", type: "Leadership", note: "Supervised a pre-service teacher through their final placement." },
-    { year: "2020", title: "Bachelor of Education (Primary)", org: "Your University", type: "Qualification", note: "" }
+    { year: "2024", title: "Mentor Teacher", org: "Musgrave Hill State School", type: "Leadership", note: "Supervised a pre-service teacher through their final placement." },
+    { year: "2017", title: "Classroom Teacher", org: "Musgrave Hill State School", type: "Teaching", note: "" },
+    { year: "2016", title: "Bachelor of Education (Primary)", org: "Your University", type: "Qualification", note: "" }
   ]
 };
