@@ -473,6 +473,11 @@
   setupEvidence();
   renderGrowth();
   renderContact();
+  // Alternate plain and tinted backgrounds across whichever sections are showing,
+  // so neighbouring sections stay distinct when one is hidden.
+  [...document.querySelectorAll("#home-view > section.section")]
+    .filter((s) => !s.hidden)
+    .forEach((s, i) => s.classList.toggle("section-sunken", i % 2 === 1));
   window.addEventListener("hashchange", route);
   route();
 })();
