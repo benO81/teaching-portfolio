@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teaching Portfolio</title>
+  <meta name="description" content="Teaching portfolio: unit planning, classroom practice and professional growth.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" data-brand></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <a href="#philosophy">Philosophy</a>
+        <a href="#units">Unit Plans</a>
+        <a href="#classroom">Classroom</a>
+        <a href="#growth">Growth</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div id="main" tabindex="-1">
+    <main id="home-view">
+      <section id="top" class="hero container" aria-labelledby="hero-name"></section>
+
+      <section id="philosophy" class="section">
+        <div class="container">
+          <p class="eyebrow">Teaching philosophy</p>
+          <h2 class="section-title">What I believe about learning</h2>
+          <div data-philosophy></div>
+        </div>
+      </section>
+
+      <section id="units" class="section section-sunken">
+        <div class="container">
+          <p class="eyebrow">Unit planning</p>
+          <h2 class="section-title">Unit plans</h2>
+          <p class="section-lede">Each unit is planned backwards from the understanding students need — goals, then assessment, then the learning sequence. Select a unit for the full plan and my reflection on how it went.</p>
+          <div class="toolbar">
+            <div class="chips" role="group" aria-label="Filter by subject" data-unit-filters></div>
+            <div class="search">
+              <label for="unit-search">Search units</label>
+              <input id="unit-search" type="search" autocomplete="off" placeholder="e.g. fractions, writing">
+            </div>
+          </div>
+          <p class="result-count" aria-live="polite" data-unit-count></p>
+          <div class="card-grid" data-unit-list></div>
+        </div>
+      </section>
+
+      <section id="classroom" class="section">
+        <div class="container">
+          <p class="eyebrow">Classroom practice</p>
+          <h2 class="section-title">Evidence from the classroom</h2>
+          <p class="section-lede">Student work, lessons in action and the feedback that connects them — each annotated with what it shows about my practice.</p>
+          <div class="chips" role="group" aria-label="Filter by category" data-evidence-filters></div>
+          <div class="evidence-grid" data-evidence-list></div>
+        </div>
+      </section>
+
+      <section id="growth" class="section section-sunken">
+        <div class="container">
+          <p class="eyebrow">Professional growth</p>
+          <h2 class="section-title">Qualifications, learning &amp; leadership</h2>
+          <ol class="timeline" data-growth></ol>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="container contact" data-contact></div>
+      </section>
+    </main>
+
+    <main id="unit-view" hidden></main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner" data-footer></div>
+  </footer>
+
+  <dialog class="evidence-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-body" data-dialog-body></div>
+  </dialog>
+
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
