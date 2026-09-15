@@ -19,7 +19,7 @@
 
 window.PORTFOLIO = {
   teacher: {
-    name: "Ben Driscoll",
+    name: "Benjamin Driscoll",
     role: "Year 5 Classroom Teacher",
     school: "Your School Name",
     location: "City, Region",
