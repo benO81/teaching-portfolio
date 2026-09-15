@@ -3,7 +3,7 @@
 The teaching portfolio of Benjamin Driscoll: classroom practice, student work and career history.
 
 - Live site: https://beno81.github.io/teaching-portfolio/
-- Also on Vercel: https://teaching-portfolio-iota.vercel.app
+- Also on Vercel: https://benjamin-driscoll-teaching.vercel.app
 
 There is nothing to install. To preview it on your computer, double-click **index.html**.
 
