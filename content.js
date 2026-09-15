@@ -399,66 +399,6 @@ window.PORTFOLIO = {
       book: { folder: "images/books/the-great-molten-escape", pages: 17 },
       description: "A student's illustrated story continuing The Wild Robot. Roz escapes a robot foundry, flies home, and faces a magma monster to save Brightbill.",
       demonstrates: "Suspense sustained across a long plot, using the character's inner thoughts, onomatopoeia and direct address to the reader."
-    },
-    {
-      title: "Fraction walls and number talks",
-      category: "Lesson in action",
-      date: "May 2026",
-      unit: "fraction-action",
-      image: "",
-      alt: "",
-      description: "Students use paper fraction walls to prove whether 2/4 and 3/6 are the same amount, then share strategies in a whole-class number talk.",
-      demonstrates: "Moving from concrete to abstract, and building a classroom culture where students explain and justify their thinking."
-    },
-    {
-      title: "Exit tickets to small groups",
-      category: "Assessment & feedback",
-      date: "May 2026",
-      unit: "fraction-action",
-      image: "",
-      alt: "",
-      description: "A sorted pile of exit tickets and the next morning's flexible grouping plan.",
-      demonstrates: "Using daily formative data to decide who needs reteaching, who needs practice and who is ready for challenge."
-    },
-    {
-      title: "From first draft to published story",
-      category: "Student work",
-      date: "March 2026",
-      unit: "worlds-of-our-own",
-      image: "",
-      alt: "",
-      description: "A student's planner, first draft with conference notes, and final illustrated book.",
-      demonstrates: "Feedback that students act on — the final story shows much stronger character development."
-    },
-    {
-      title: "The blubber glove investigation",
-      category: "Lesson in action",
-      date: "August 2025",
-      unit: "survival-stars",
-      image: "",
-      alt: "",
-      description: "Students test how well different materials insulate against iced water, recording temperatures in their science journals.",
-      demonstrates: "Hands-on inquiry and explicit teaching of fair testing."
-    },
-    {
-      title: "Class museum opening",
-      category: "Student work",
-      date: "November 2025",
-      unit: "our-place-our-stories",
-      image: "",
-      alt: "",
-      description: "Students present exhibits about local history to families and community members.",
-      demonstrates: "Authentic audiences, community partnerships and student voice."
-    },
-    {
-      title: "Calm corner and class agreement",
-      category: "Classroom environment",
-      date: "Ongoing",
-      unit: "",
-      image: "",
-      alt: "",
-      description: "A student-designed calm corner, a class agreement written together in Week 1, and our visual daily timetable.",
-      demonstrates: "Predictable routines and a positive, inclusive environment that supports wellbeing and self-regulation."
     }
   ],
 
