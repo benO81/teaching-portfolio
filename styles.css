@@ -266,8 +266,10 @@ a:hover { color: var(--accent-hover); }
 }
 .profile-photo {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
+  max-width: 100%;
   object-fit: cover;
+  object-position: 50% 30%;
   border-radius: var(--radius-sm);
   margin-bottom: 24px;
 }

@@ -28,7 +28,7 @@ window.PORTFOLIO = {
     yearLevels: "Year 5",
     email: "bjdri0@eq.edu.au",
     resume: "",           // e.g. "files/resume.pdf" — leave "" to hide the button
-    photo: "",            // e.g. "images/headshot.jpg" — leave "" to show initials
+    photo: "images/headshot.jpg",  // leave "" to show initials instead
     intro:
       "I teach Year 5 across every learning area — which means I get to connect the dots for my students, from fractions in the morning to the stories they write after lunch. This portfolio shows how I plan, what learning looks like in our classroom, and what my students create.",
     updated: "September 2026"
