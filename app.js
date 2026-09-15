@@ -304,7 +304,7 @@
     $("[data-contact]").innerHTML = `
       <p class="eyebrow">Contact</p>
       <h2>Let's talk about teaching and learning</h2>
-      <p>I'm happy to share full unit resources, discuss my practice, or arrange a classroom visit.</p>
+      <p>I'm happy to talk about my teaching, share more of my students' work, or arrange a classroom visit.</p>
       <div class="hero-actions">
         ${has(t.email) ? `<a class="btn btn-primary" href="mailto:${esc(t.email)}">Email ${esc(first || "me")}</a>` : ""}
         ${has(t.resume) ? `<a class="btn btn-secondary" href="${esc(t.resume)}" target="_blank" rel="noopener">View résumé</a>` : ""}
@@ -429,7 +429,9 @@
         : `<div class="container not-found">
             <h1 tabindex="-1">Unit not found</h1>
             <p>This unit may have been renamed or removed.</p>
-            <a class="btn btn-primary" href="#units">See all unit plans</a>
+            ${units.length
+              ? `<a class="btn btn-primary" href="#units">See all unit plans</a>`
+              : `<a class="btn btn-primary" href="#top">Back to the portfolio</a>`}
           </div>`;
       document.title = u ? `${u.title} · ${siteTitle}` : `Unit not found · ${siteTitle}`;
       $("h1", unitView).focus({ preventScroll: true });
