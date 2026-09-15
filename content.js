@@ -20,10 +20,10 @@
 window.PORTFOLIO = {
   teacher: {
     name: "Benjamin Driscoll",
-    role: "Year 5 Classroom Teacher",
+    role: "Senior Teacher · Year 5",
     school: "Musgrave Hill State School",
     location: "Southport, Queensland",
-    experience: "Teaching at Musgrave Hill State School since 2017",
+    experience: "Teaching since 2012 · at Musgrave Hill State School since 2017",
     subjects: ["All learning areas (generalist)"],
     yearLevels: "Year 5",
     email: "bjdri0@eq.edu.au",
@@ -406,10 +406,13 @@ window.PORTFOLIO = {
     type: e.g. "Qualification", "Professional learning", "Leadership", "Award"
   */
   growth: [
-    { year: "2026", title: "Numeracy Team Member", org: "Musgrave Hill State School", type: "Leadership", note: "Help lead whole-school use of concrete materials in Years 3–6." },
-    { year: "2025", title: "Structured Literacy Professional Learning", org: "Your Professional Learning Provider", type: "Professional learning", note: "Applied explicit phonics and spelling routines in daily literacy blocks." },
-    { year: "2024", title: "Mentor Teacher", org: "Musgrave Hill State School", type: "Leadership", note: "Supervised a pre-service teacher through their final placement." },
-    { year: "2017", title: "Classroom Teacher", org: "Musgrave Hill State School", type: "Teaching", note: "" },
-    { year: "2016", title: "Bachelor of Education (Primary)", org: "Your University", type: "Qualification", note: "" }
+    { year: "2023", title: "Senior Teacher", org: "Queensland Department of Education · 2023–present", type: "Teaching", note: "" },
+    { year: "2019", title: "Master of Education in Digital Learning", org: "Monash University · 2017–2019", type: "Qualification", note: "" },
+    { year: "2017", title: "Primary Teacher", org: "Musgrave Hill State School, Gold Coast · 2017–present", type: "Teaching", note: "" },
+    { year: "2015", title: "Primary Teacher", org: "Queensland Department of Education · 2015–present", type: "Teaching", note: "Including teaching in remote Indigenous communities." },
+    { year: "2014", title: "Graduate Diploma of Education", org: "Griffith University", type: "Qualification", note: "" },
+    { year: "2012", title: "Oral English Teacher", org: "Liaoning University, Shenyang, China · 2012–2013", type: "Teaching", note: "" },
+    { year: "2011", title: "Bachelor's Degree, Multimedia", org: "Griffith University · 2005–2011", type: "Qualification", note: "Including study at the University of Oulu, Finland (2011)." },
+    { year: "2004", title: "Diploma of Multimedia", org: "TAFE Queensland Brisbane · 2003–2004", type: "Qualification", note: "" }
   ]
 };
