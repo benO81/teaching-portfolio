@@ -156,6 +156,50 @@ window.PORTFOLIO = {
       book: { folder: "images/books/the-great-molten-escape", pages: 17 },
       description: "A student's illustrated story continuing The Wild Robot. Roz escapes a robot foundry, flies home, and faces a magma monster to save Brightbill.",
       demonstrates: "Suspense sustained across a long plot, using the character's inner thoughts, onomatopoeia and direct address to the reader."
+    },
+    {
+      title: "The Way Home",
+      category: "Student work",
+      date: "September 2026",
+      unit: "",
+      image: "",
+      alt: "Cover of the student picture book The Way Home, with the author's name blurred",
+      book: { folder: "images/books/the-way-home", pages: 10 },
+      description: "A student's illustrated story continuing The Wild Robot. Roz and Brightbill escape a science lab, are hunted by a mechanical fire dragon, and fight their way back to the island.",
+      demonstrates: "Suspense built through changing settings, dialogue that shows the bond between the characters, and a reflective ending."
+    },
+    {
+      title: "The Elemental Magic",
+      category: "Student work",
+      date: "September 2026",
+      unit: "",
+      image: "",
+      alt: "Cover of the student picture book The Elemental Magic, with the author's name blurred",
+      book: { folder: "images/books/the-elemental-magic", pages: 10 },
+      description: "A student's illustrated story continuing The Wild Robot. Roz travels to an elemental island to find Fink the fox's missing father, outwitting water and lava dragons and a RECO along the way.",
+      demonstrates: "Problem-solving woven into the plot, a flashback, and direct address to the reader."
+    },
+    {
+      title: "The Acid Land",
+      category: "Student work",
+      date: "September 2026",
+      unit: "",
+      image: "",
+      alt: "Cover of the student picture book The Acid Land, with the author's name blurred",
+      book: { folder: "images/books/the-acid-land", pages: 10 },
+      description: "A student's illustrated story continuing The Wild Robot. Roz and Brightbill fight acid monsters with magical water, and Roz is broken and rebuilt before the island celebrates.",
+      demonstrates: "Similes and sound words to create vivid images, and a plot that moves across a long stretch of time."
+    },
+    {
+      title: "The RECOs Return",
+      category: "Student work",
+      date: "September 2026",
+      unit: "",
+      image: "",
+      alt: "Cover of the student picture book The RECOs Return, with the author's name blurred",
+      book: { folder: "images/books/the-recos-return", pages: 10 },
+      description: "A student's illustrated story continuing The Wild Robot. Roz escapes a RECO lab, battles a giant upgraded RECO, and is repaired by her friends on the island.",
+      demonstrates: "A clear sequence of events building to a battle, with a cliffhanger ending."
     }
   ],
 
