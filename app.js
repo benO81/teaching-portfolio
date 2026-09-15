@@ -46,6 +46,13 @@
 
   const nav = $("#site-nav");
   const toggle = $(".menu-toggle");
+
+  // Hide a section with no content, and its menu link, so visitors never see an empty section.
+  const hideSection = (id) => {
+    $(`#${id}`).hidden = true;
+    const link = nav.querySelector(`a[href="#${id}"]`);
+    if (link) link.hidden = true;
+  };
   const setMenu = (open) => {
     nav.classList.toggle("is-open", open);
     toggle.setAttribute("aria-expanded", String(open));
@@ -74,10 +81,10 @@
         ${has(t.role) ? `<p class="hero-role">${esc(t.role)}</p>` : ""}
         <h1 id="hero-name">${esc(t.name || "Teaching Portfolio")}</h1>
         ${has(t.intro) ? `<p class="hero-intro">${esc(t.intro)}</p>` : ""}
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#units">View unit plans</a>
-          <a class="btn btn-secondary" href="#classroom">See classroom evidence</a>
-        </div>
+        ${units.length || evidence.length ? `<div class="hero-actions">
+          ${units.length ? `<a class="btn btn-primary" href="#units">View unit plans</a>` : ""}
+          ${evidence.length ? `<a class="btn ${units.length ? "btn-secondary" : "btn-primary"}" href="#classroom">See classroom evidence</a>` : ""}
+        </div>` : ""}
       </div>
       <aside class="profile-card" aria-label="At a glance">
         ${media}
@@ -91,7 +98,7 @@
     $("[data-philosophy]").innerHTML = `
       ${has(philosophy.statement) ? `<p class="philosophy-statement">${esc(philosophy.statement)}</p>` : ""}
       ${principles.length ? `<ul class="principles">${principles.map((p) => `<li><h3>${esc(p.title)}</h3><p>${esc(p.text)}</p></li>`).join("")}</ul>` : ""}`;
-    if (!has(philosophy.statement) && !principles.length) $("#philosophy").hidden = true;
+    if (!has(philosophy.statement) && !principles.length) hideSection("philosophy");
   }
 
   /* ---------- Filter chips (shared) ---------- */
@@ -133,13 +140,7 @@
     const countEl = $("[data-unit-count]");
 
     if (!units.length) {
-      $(".toolbar").hidden = true;
-      countEl.textContent = "";
-      listEl.innerHTML = `
-        <div class="empty-state">
-          <h3>No unit plans yet</h3>
-          <p>Add your first unit to the <strong>units</strong> list in content.js and it will appear here as a card with its own full plan page.</p>
-        </div>`;
+      hideSection("units");
       return;
     }
 
@@ -194,11 +195,7 @@
   function renderEvidence() {
     const listEl = $("[data-evidence-list]");
     if (!evidence.length) {
-      listEl.innerHTML = `
-        <div class="empty-state">
-          <h3>No classroom evidence yet</h3>
-          <p>Add photos of student work, lessons and feedback to the <strong>evidence</strong> list in content.js. Each one opens with a note on what it demonstrates.</p>
-        </div>`;
+      hideSection("classroom");
       return;
     }
     const items = evidence
@@ -251,6 +248,10 @@
     dialog.addEventListener("click", (ev) => {
       if (ev.target === dialog || ev.target.closest("[data-close]")) dialog.close();
     });
+    // Not every browser closes a dialog on Escape by itself, so handle it explicitly.
+    dialog.addEventListener("keydown", (ev) => {
+      if (ev.key === "Escape" && dialog.open) { ev.preventDefault(); dialog.close(); }
+    });
     dialog.addEventListener("close", () => {
       if (lastTrigger && document.body.contains(lastTrigger) && !location.hash.startsWith("#/unit/")) lastTrigger.focus();
     });
@@ -259,7 +260,7 @@
 
   /* ---------- Growth ---------- */
   function renderGrowth() {
-    if (!growth.length) { $("#growth").hidden = true; return; }
+    if (!growth.length) { hideSection("growth"); return; }
     $("[data-growth]").innerHTML = growth
       .map((g) => `
         <li>
@@ -391,6 +392,8 @@
 
   function route() {
     const hash = location.hash;
+    // Changing page (a link, or the Back button) shouldn't leave the evidence pop-up open.
+    if (dialog.open) { lastTrigger = null; dialog.close(); }
     const match = hash.match(/^#\/unit\/(.+)$/);
 
     if (match) {

@@ -12,7 +12,10 @@
   - Images: put the file in the "images" folder and write its path,
     e.g.  image: "images/fraction-wall.jpg"
     Leave image: "" and a text tile is shown instead.
-  - Leave any field as "" (or an empty list []) to hide it.
+  - Leave any field as "" to hide it. Set a list to [] (e.g. evidence: [])
+    to hide that whole section and its menu link.
+  - If you change your name, role or school, also update the preview
+    tags near the top of index.html (used by LinkedIn and email previews).
   - Only include students' names or faces if you have permission.
   ============================================================
 */

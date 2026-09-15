@@ -161,6 +161,9 @@ a:hover { color: var(--accent-hover); }
   gap: 16px;
 }
 .brand {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 18px;
