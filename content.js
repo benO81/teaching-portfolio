@@ -222,7 +222,8 @@ window.PORTFOLIO = {
         { src: "images/procedures/slimescale.jpg", title: "How to Train a Slimescale", alt: "A swamp dragon. Eight steps, from finding a suitable habitat to a lifelong friend, with a materials list and a Remember panel." },
         { src: "images/procedures/prism-wyrm.jpg", title: "How to Train a Prism Wyrm", alt: "A fragile crystal dragon. Eight steps, from finding a safe space to a brighter tomorrow, with a materials list and a Remember panel." },
         { src: "images/procedures/titandrake.jpg", title: "How to Train a Titandrake", alt: "An armoured metal dragon. Eight steps, from finding a suitable home to exploring a brighter tomorrow, with a materials list and a Remember panel." },
-        { src: "images/procedures/stormwing.jpg", title: "How to Train a Stormwing", alt: "A lightning dragon. Eight steps, from finding a storm zone to a lifelong partner, with a materials list and a Remember panel." }
+        { src: "images/procedures/stormwing.jpg", title: "How to Train a Stormwing", alt: "A lightning dragon. Eight steps, from finding a storm zone to a lifelong partner, with a materials list and a Remember panel." },
+        { src: "images/procedures/diamondblaze.jpg", title: "How to Train a Diamondblaze", alt: "A sparkling diamond dragon. Eight steps, from finding a suitable home to a lifelong partner, with a materials list and a Remember panel." }
       ],
       description: "Illustrated step-by-step guides explaining how to train an imaginary dragon, each with a materials list and numbered steps.",
       demonstrates: "The structure and language of procedural texts: a clear goal, a materials list, numbered steps in order, and imperative verbs such as choose, offer and practise."
