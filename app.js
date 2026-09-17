@@ -192,6 +192,8 @@
     e.book && has(e.book.folder) && e.book.pages > 0
       ? Array.from({ length: e.book.pages }, (_, i) => `${e.book.folder}/p${String(i + 1).padStart(2, "0")}.jpg`)
       : [];
+  // A gallery is a list of { src, title, alt } images shown one after another in the pop-up.
+  const galleryItems = (e) => (Array.isArray(e.gallery) ? e.gallery.filter((g) => has(g.src)) : []);
   const cardImage = (e) => (has(e.image) ? e.image : bookPages(e).length ? `${e.book.folder}/cover-sm.jpg` : "");
 
   // The card's image is decorative: the button is named by its title, and the pop-up carries the full description.
@@ -228,6 +230,7 @@
     if (!e) return;
     const unit = units.find((u) => u.slug === e.unit);
     const pages = bookPages(e);
+    const gallery = galleryItems(e);
     // Transcripts live in book-text.js, keyed by the book's folder name, one entry per page.
     const pageText = (pages.length && window.BOOK_TEXT && window.BOOK_TEXT[e.book.folder.split("/").pop()]) || [];
     lastTrigger = trigger;
@@ -239,7 +242,7 @@
         </div>
         <button type="button" class="close-btn" data-close aria-label="Close">${closeIcon}</button>
       </div>
-      ${has(e.image) && !pages.length ? `<img src="${esc(e.image)}" alt="${esc(e.alt)}">` : ""}
+      ${has(e.image) && !pages.length && !gallery.length ? `<img src="${esc(e.image)}" alt="${esc(e.alt)}">` : ""}
       ${has(e.description) ? `<p class="muted">${esc(e.description)}</p>` : ""}
       ${has(e.demonstrates) ? `<div class="callout"><p class="callout-label">What this demonstrates</p><p>${esc(e.demonstrates)}</p></div>` : ""}
       ${unit ? `<a class="text-link" href="#/unit/${encodeURIComponent(unit.slug)}" data-close>From the unit: ${esc(unit.title)}</a>` : ""}
@@ -252,8 +255,11 @@
             : "";
           return `<li><img src="${esc(src)}" alt="${esc(alt)}" loading="lazy" width="1280" height="720"><span class="page-label">Page ${i + 1} of ${pages.length}</span>${transcript}</li>`;
         })
+        .join("")}</ol>` : ""}
+      ${gallery.length ? `<ol class="book-pages gallery" aria-label="${esc(e.title)}, ${gallery.length} images">${gallery
+        .map((g, i) => `<li><h3 class="gallery-title"><span class="page-label">${i + 1} of ${gallery.length}</span>${esc(g.title)}</h3><img src="${esc(g.src)}" alt="${esc(g.alt || g.title)}" loading="lazy"></li>`)
         .join("")}</ol>` : ""}`;
-    dialog.classList.toggle("is-wide", pages.length > 0);
+    dialog.classList.toggle("is-wide", pages.length > 0 || gallery.length > 0);
     dialog.showModal();
     dialog.scrollTop = 0;
     $("[data-close]", dialog).focus();

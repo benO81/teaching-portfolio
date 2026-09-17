@@ -100,6 +100,8 @@ window.PORTFOLIO = {
     book: optional — a folder of page images named p01.jpg, p02.jpg … plus a
           small cover-sm.jpg, and how many pages there are. The card shows the
           cover and the pop-up shows every page.
+    gallery: optional — a list of { src, title, alt } images, all shown in the
+          pop-up. Use image for the card picture.
   */
   evidence: [
     {
@@ -200,6 +202,50 @@ window.PORTFOLIO = {
       book: { folder: "images/books/the-recos-return", pages: 10 },
       description: "A student's illustrated story continuing The Wild Robot. Roz escapes a RECO lab, battles a giant upgraded RECO, and is repaired by her friends on the island.",
       demonstrates: "A clear sequence of events building to a battle, with a cliffhanger ending."
+    },
+    {
+      title: "Procedures",
+      category: "Student work",
+      date: "September 2026",
+      unit: "",
+      image: "images/procedures/cover-sm.jpg",
+      alt: "",
+      gallery: [
+        { src: "images/procedures/verdigrath.jpg", title: "How to Train a Verdigrath", alt: "A green fire-breathing dragon. Eight steps, from finding a safe location to a brighter tomorrow, with a materials list and a Remember panel." },
+        { src: "images/procedures/lumindrake.jpg", title: "How to Train a Lumindrake", alt: "A glowing crystal dragon. Eight steps, from finding a high place to a brighter tomorrow, with a materials list and a Remember panel." },
+        { src: "images/procedures/emberhorn.jpg", title: "How to Train an Emberhorn", alt: "A volcanic dragon. Nine steps, from finding a volcanic den to knowing it is trained, with a materials list and training tips." },
+        { src: "images/procedures/skybloom-blossom.jpg", title: "How to Train a Skybloom (pink)", alt: "A gentle pink dragon. Nine steps, from finding a peaceful place to a lifelong friend, with a materials list and a Remember panel." },
+        { src: "images/procedures/glacialis.jpg", title: "How to Train a Glacialis", alt: "An ice dragon. Nine steps, from choosing a safe environment to a lifelong partner, with a materials list." },
+        { src: "images/procedures/pyroclaw.jpg", title: "How to Train a Pyroclaw", alt: "A lava dragon. Nine steps, from finding a safe location to a lifelong bond, with a materials list and a Remember panel." },
+        { src: "images/procedures/shadowfang.jpg", title: "How to Train a Shadowfang", alt: "A fierce black dragon. Nine steps, from finding a suitable territory to a lifelong ally, with a materials list and a Remember panel." },
+        { src: "images/procedures/skybloom-rainbow.jpg", title: "How to Train a Skybloom (rainbow)", alt: "A rainbow-feathered dragon. Eight steps, from finding a safe place to a lifelong friend, with a materials list and a Remember panel." },
+        { src: "images/procedures/slimescale.jpg", title: "How to Train a Slimescale", alt: "A swamp dragon. Eight steps, from finding a suitable habitat to a lifelong friend, with a materials list and a Remember panel." },
+        { src: "images/procedures/prism-wyrm.jpg", title: "How to Train a Prism Wyrm", alt: "A fragile crystal dragon. Eight steps, from finding a safe space to a brighter tomorrow, with a materials list and a Remember panel." },
+        { src: "images/procedures/titandrake.jpg", title: "How to Train a Titandrake", alt: "An armoured metal dragon. Eight steps, from finding a suitable home to exploring a brighter tomorrow, with a materials list and a Remember panel." },
+        { src: "images/procedures/stormwing.jpg", title: "How to Train a Stormwing", alt: "A lightning dragon. Eight steps, from finding a storm zone to a lifelong partner, with a materials list and a Remember panel." }
+      ],
+      description: "Illustrated step-by-step guides explaining how to train an imaginary dragon, each with a materials list and numbered steps.",
+      demonstrates: "The structure and language of procedural texts: a clear goal, a materials list, numbered steps in order, and imperative verbs such as choose, offer and practise."
+    },
+    {
+      title: "Advertisements",
+      category: "Student work",
+      date: "September 2026",
+      unit: "",
+      image: "images/advertisements/cover-sm.jpg",
+      alt: "",
+      gallery: [
+        { src: "images/advertisements/stormfang-poster.jpg", title: "Stormfang poster", alt: "Poster for Stormfang, a black storm dragon, with the slogan Sky's no limit, a list of features and the call to action Choose Stormfang today!" },
+        { src: "images/advertisements/stormfang-billboard.jpg", title: "Stormfang billboard", alt: "Billboard for Stormfang, the ultimate dragon for fearless trainers, listing its speed, strength, firepower and loyalty." },
+        { src: "images/advertisements/lumi.jpg", title: "Lumi billboard", alt: "Billboard for Lumi, a pink rainbow dragon, the colour of adventure, with a special offer and the call to action Adopt Lumi today!" },
+        { src: "images/advertisements/aurora.jpg", title: "Aurora billboard", alt: "Billboard for Aurora, a pink rainbow dragon, with four features, a special offer and the call to action Adopt Aurora today!" },
+        { src: "images/advertisements/frostwing.jpg", title: "Frostwing billboard", alt: "Billboard for Frostwing, an ice dragon built for bold trainers, with four features and the call to action Adopt Frostwing today!" },
+        { src: "images/advertisements/boulder.jpg", title: "Boulder billboard", alt: "Billboard for Boulder, a rock dragon, with the slogan The ground has a friend, four features and the call to action Adopt Boulder today!" },
+        { src: "images/advertisements/verdant.jpg", title: "Verdant billboard", alt: "Billboard for Verdant, a leafy nature dragon, with four features and the call to action Adopt Verdant today!" },
+        { src: "images/advertisements/volt.jpg", title: "Volt billboard", alt: "Billboard for Volt, a lightning dragon, with the slogan Power your next big idea, a special offer and the call to action Team up with Volt today!" }
+      ],
+      description: "Billboards and posters persuading readers to choose or adopt an imaginary dragon.",
+      demonstrates: "Persuasive techniques: catchy slogans, lists of features and benefits, special offers, and a clear call to action."
     }
   ],
 
